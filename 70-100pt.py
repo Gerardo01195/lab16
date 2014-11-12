@@ -41,6 +41,7 @@ class myApp(object):
         drawpad.pack()
         root.bind_all('<Key>', self.key)
         self.animate()
+        
     
     def animate(self):
         global drawpad
@@ -55,6 +56,9 @@ class myApp(object):
             direction = - 5
         elif x1 < 0:
             direction = 5
+        if rocket1Fired = True:
+            
+             drawpad.move(rocket1)
         drawpad.move(enemy, direction, 0)
         drawpad.after(5,self.animate)
 
@@ -79,7 +83,8 @@ class myApp(object):
             if x2 < 800:
                 drawpad.move(player,4,0)
                 drawpad.move(rocket1,4,0)
-            
+        if event.char == " ":
+            if rocket1 == true    
     
     def collisionDetect(self, rocket):
         rx1,ry1,rx2,ry2 = drawpad.coords(rocket)
